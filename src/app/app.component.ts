@@ -15,7 +15,7 @@ export class AppComponent {
   }
 
   logout() {
-    this.http.post('logout', {}).pipe(finalize(() => {
+    this.http.post('api/logout', {}).pipe(finalize(() => {
       this.app.authenticated = false;
       this.router.navigateByUrl('/login');
     })).subscribe();
